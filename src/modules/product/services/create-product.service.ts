@@ -9,4 +9,8 @@ export class CreateProductService {
   async create(data: ProductDTO) {
     return this.prisma.product.create({ data });
   }
+
+  async createMany(data: ProductDTO) {
+    return this.prisma.product.createMany({ data });
+  }
 }

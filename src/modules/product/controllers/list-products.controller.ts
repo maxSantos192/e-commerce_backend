@@ -6,7 +6,7 @@ export class ListProductsController {
   constructor(private readonly listProductService: ListProductService) {}
 
   @Get()
-  async findAll() {
+  async getAll() {
     return this.listProductService.findAll();
   }
 }

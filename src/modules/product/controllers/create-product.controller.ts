@@ -10,4 +10,9 @@ export class CreateProductController {
   async create(@Body() data: ProductDTO) {
     return this.createProductService.create(data);
   }
+
+  @Post('/populate')
+  async createMany(@Body() data: ProductDTO) {
+    return this.createProductService.createMany(data);
+  }
 }

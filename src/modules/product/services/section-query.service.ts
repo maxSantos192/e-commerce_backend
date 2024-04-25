@@ -12,6 +12,6 @@ export class SectionQueryService {
         WHERE "is_new" = true OR "discount_price" IS NOT NULL
         ORDER BY random()
         LIMIT 8
-      `;
+        `;
   }
 }
