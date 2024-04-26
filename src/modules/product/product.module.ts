@@ -21,20 +21,20 @@ import { ListProductService } from './services/list-products.service';
   controllers: [
     PaginationShopController,
     SearchProductController,
+    ListProductCategoryController,
     SectionQueryController,
     CreateProductController,
     DetailProductController,
-    ListProductCategoryController,
     ListProductsController,
   ],
   providers: [
     PaginationShopService,
     SearchProductService,
+    ListProductCategoryService,
     SectionQueryService,
     PrismaService,
     CreateProductService,
     DetailProductService,
-    ListProductCategoryService,
     ListProductService,
   ],
 })

@@ -9,17 +9,19 @@ export class PaginationShopController {
   getPaginationShop(
     @Query('page', ParseIntPipe) page: number,
     @Query('limit', ParseIntPipe) limit: number,
-    @Query('category') categoryQuery?: string, // Alterado para receber uma string
+    @Query('category') categoryQuery?: string,
     @Query('orderBy') orderByQuery?: string
   ) {
     const categories = categoryQuery
       ? categoryQuery.split(',').map(Number)
       : undefined; // Converte a string em um array de números
+
     const orderBy = this.parseOrderBy(orderByQuery);
+
     return this.paginationShopService.paginationShop(
       page,
       limit,
-      categories, // Passa um array de categorias
+      categories,
       orderBy
     );
   }

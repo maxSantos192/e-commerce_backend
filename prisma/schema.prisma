@@ -17,6 +17,7 @@ model Product {
   price             Decimal  @db.Decimal(10, 2)
   discount_price    Decimal? @db.Decimal(10, 2)
   discount_percent  Int?
+  total_price       Decimal  @db.Decimal(10, 2)
   is_new            Boolean  @default(true)
   image_link        String?  @db.VarChar(250)
   other_images_link String?  @db.VarChar(1000)

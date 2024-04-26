@@ -1,4 +1,11 @@
-import { Body, Controller, Post, Get } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  Post,
+  Get,
+  Param,
+  ParseIntPipe,
+} from '@nestjs/common';
 import { CategoryService } from './category.service';
 import { CategoryDTO } from './category.dto';
 
@@ -8,11 +15,16 @@ export class CategoryController {
 
   @Post()
   async create(@Body() data: CategoryDTO) {
-    return this.categoryService.create(data)
+    return this.categoryService.create(data);
   }
 
   @Get()
   async findAll() {
-    return this.categoryService.findAll()
+    return this.categoryService.findAll();
+  }
+
+  @Get('/:id')
+  async findOne(@Param('id', ParseIntPipe) id: number) {
+    return this.categoryService.findOne(id);
   }
 }

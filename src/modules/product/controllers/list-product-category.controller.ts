@@ -1,4 +1,4 @@
-import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
+import { Controller, Get, Query, ParseIntPipe } from '@nestjs/common';
 import { ListProductCategoryService } from '../services/list-product-category.service';
 
 @Controller('product')
@@ -7,10 +7,11 @@ export class ListProductCategoryController {
     private readonly listProductCategoryService: ListProductCategoryService
   ) {}
 
-  @Get('/category/:categoryId')
+  @Get('/category')
   async getProductsByCategory(
-    @Param('categoryId', ParseIntPipe) categoryId: number
+    @Query('categoryId', ParseIntPipe) categoryId: number,
+    @Query('limit', new ParseIntPipe({ optional: true })) limit?: number
   ) {
-    return this.listProductCategoryService.findByCategory(categoryId);
+    return this.listProductCategoryService.findByCategory(categoryId, limit);
   }
 }

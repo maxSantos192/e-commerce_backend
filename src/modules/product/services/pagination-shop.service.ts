@@ -24,7 +24,7 @@ export class PaginationShopService {
       where,
       skip,
       take: limit,
-      orderBy: order, // Incluído o uso do parâmetro de ordenação.
+      orderBy: order,
     });
 
     const count = await this.prisma.product.count({

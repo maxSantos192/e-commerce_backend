@@ -4,18 +4,25 @@ import { PrismaService } from 'src/database/PrismaService';
 
 @Injectable()
 export class CategoryService {
-    constructor(private prisma: PrismaService) {}
+  constructor(private prisma: PrismaService) {}
 
-    //create a new category
-    async create(data: CategoryDTO) {
-        const category = await this.prisma.category.create({
-            data
-        })
-        return category;
-    }
+  //create a new category
+  async create(data: CategoryDTO) {
+    const category = await this.prisma.category.create({
+      data,
+    });
+    return category;
+  }
 
-    //find all category
-    async findAll() {
-        return this.prisma.category.findMany()
-    }
+  //find all category
+  async findAll() {
+    return this.prisma.category.findMany();
+  }
+
+  //find by id
+  async findOne(id: number) {
+    return this.prisma.category.findUnique({
+      where: { id },
+    });
+  }
 }
