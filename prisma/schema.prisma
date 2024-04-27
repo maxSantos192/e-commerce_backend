@@ -20,7 +20,7 @@ model Product {
   total_price       Decimal  @db.Decimal(10, 2)
   is_new            Boolean  @default(true)
   image_link        String?  @db.VarChar(250)
-  other_images_link String?  @db.VarChar(1000)
+  other_images_link String[] @db.VarChar(1000)
   created_date      DateTime @default(now())
   updated_date      DateTime @updatedAt
 

@@ -11,5 +11,5 @@ export type ProductDTO = {
   total_price: number;
   is_new?: boolean;
   image_link?: string;
-  other_image_link?: string;
+  other_image_link?: string[];
 };
