@@ -28,11 +28,11 @@ import { ListProductService } from './services/list-products.service';
     ListProductsController,
   ],
   providers: [
+    PrismaService,
     PaginationShopService,
     SearchProductService,
     ListProductCategoryService,
     SectionQueryService,
-    PrismaService,
     CreateProductService,
     DetailProductService,
     ListProductService,
