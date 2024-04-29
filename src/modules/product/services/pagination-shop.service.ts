@@ -18,7 +18,7 @@ export class PaginationShopService {
       where.category_id = { in: categories };
     }
 
-    const order = orderBy ? { [orderBy.field]: orderBy.order } : {}; // Aplica a ordenação se fornecida.
+    const order = orderBy ? { [orderBy.field]: orderBy.order } : {};
 
     const products = await this.prisma.product.findMany({
       where,
